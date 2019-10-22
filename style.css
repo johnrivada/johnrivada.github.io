@@ -1,0 +1,20 @@
+.category,
+.title,
+.footer {
+  position: -webkit-sticky; /* Required for Safari */
+  position: sticky;
+  height: 50px;
+}
+
+.category {
+  top: 0;
+}
+
+.title {
+  top: 0;
+}
+
+.footer {
+  bottom: 100px;
+  z-index: -1;
+}
