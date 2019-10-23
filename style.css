@@ -4,6 +4,7 @@
   position: sticky;
   height: 50px;
   background-color: red;
+  display: block;
 }
 
 .title {
@@ -12,6 +13,7 @@
   position: sticky;
   height: 50px;
   background-color: green;
+  display: block;
 }
 
 .footer {
@@ -21,6 +23,7 @@
   position: sticky;
   height: 50px;
   background-color: blue;
+  display: block;
 }
 
 article {
@@ -32,4 +35,5 @@ article {
     transparent 0
   );
   margin: auto auto 50px auto;
+  display: block;
 }
