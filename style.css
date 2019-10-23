@@ -1,5 +1,15 @@
-.category,
-.title,
+.category {
+  position: -webkit-sticky; /* Required for Safari */
+  position: sticky;
+  height: 50px;
+}
+
+.title {
+  position: -webkit-sticky; /* Required for Safari */
+  position: sticky;
+  height: 50px;
+}
+
 .footer {
   position: -webkit-sticky; /* Required for Safari */
   position: sticky;
