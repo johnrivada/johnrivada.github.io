@@ -1,32 +1,26 @@
 .category {
-  position: -webkit-sticky; /* Required for Safari */
-  position: sticky;
-  height: 50px;
-}
-
-.title {
-  position: -webkit-sticky; /* Required for Safari */
-  position: sticky;
-  height: 50px;
-}
-
-.footer {
-  position: -webkit-sticky; /* Required for Safari */
-  position: sticky;
-  height: 50px;
-}
-
-.category {
   top: 0;
+  position: -webkit-sticky; /* Required for Safari */
+  position: sticky;
+  height: 50px;
+  background-color: red;
 }
 
 .title {
   top: 0;
+  position: -webkit-sticky; /* Required for Safari */
+  position: sticky;
+  height: 50px;
+  background-color: green;
 }
 
 .footer {
   bottom: 100px;
   z-index: -1;
+  position: -webkit-sticky; /* Required for Safari */
+  position: sticky;
+  height: 50px;
+  background-color: blue;
 }
 
 article {
