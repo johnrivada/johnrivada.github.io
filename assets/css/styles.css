@@ -2,12 +2,6 @@
 
 html { font-size: 18px; line-height: 1.5; max-width: 68rem; margin: 0 auto; padding: 1rem; -webkit-font-smoothing: antialiased; }
 
-@media (min-width: 600px) { html { padding: 2rem; } }
-
-@media (min-width: 1000px) { html { font-size: 19px; } }
-
-@media (min-width: 1200px) { html { font-size: 20px; } }
-
 main { min-height: calc(100vh - 20.5rem); }
 
 .contain { margin: 5rem 0; }
