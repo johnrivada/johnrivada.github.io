@@ -26,11 +26,20 @@
 
     <h1> Oh hello there! </h1>
 <p>This site is will mostly be used for ranting about whatever is on my mind and hosting some of my programming project.</p>
-<p id="demo"></p>
 <p>Test</p>
+
+<p><button onclick="myFunction()">Try it</button></p>
+
+<p><strong>Note:</strong> The innerWidth and innerHeight properties are not supported in IE8 and earlier.</p>
+
+<p id="demo"></p>
+
 <script>
-document.getElementById("demo").innerHTML =
-"Screen width is " + screen.width;
+function myFunction() {
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  document.getElementById("demo").innerHTML = "Width: " + w + "<br>Height: " + h;
+}
 </script>
 
 
