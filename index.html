@@ -28,6 +28,21 @@
 <p>This site is will mostly be used for ranting about whatever is on my mind and hosting some of my programming project.</p>
 <p>Test</p>
 
+<p><button onclick="myFunction()">Try it</button></p>
+
+<p><strong>Note:</strong> The innerWidth and innerHeight properties are not supported in IE8 and earlier.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  document.getElementById("demo").innerHTML = "Width: " + w + "<br>Height: " + h;
+}
+</script>
+
+
     <footer role="contentinfo">
   <a href="#">Back to top</a> ·
   © 2019 John Rivada
