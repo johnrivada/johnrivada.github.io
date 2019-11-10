@@ -1,6 +1,6 @@
 * { box-sizing: border-box; font-kerning: normal; }
 
-html { font-size: 18px; line-height: 1.5; max-width: 68rem; margin: 0 auto; padding: 1rem; -webkit-font-smoothing: antialiased; }
+html { font-size: 18px; line-height: 1.5; max-width: 68rem; margin: 0 auto; padding: 1rem; -webkit-font-smoothing: antialiased; min-height: calc(100vh - 20.5rem); }
 
 @media (min-width: 600px) { html { padding: 2rem; } }
 
@@ -9,8 +9,6 @@ html { font-size: 18px; line-height: 1.5; max-width: 68rem; margin: 0 auto; padd
 @media (min-width: 1200px) { html { font-size: 20px; } }
 
 @media screen and (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-main { min-height: calc(100vh - 20.5rem); }
 
 .contain { margin: 5rem 0; }
 
