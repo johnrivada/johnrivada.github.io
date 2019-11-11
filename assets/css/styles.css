@@ -1,6 +1,6 @@
-html { background-color: red; }
+html { background-color: red; font-size: 25px; }
 
-@media (min-width: 1000px) { html { background-color: green; } }
+@media (min-width: 40rem) { html { background-color: green; } }
 
 .contain { margin: 5rem 0; }
 
