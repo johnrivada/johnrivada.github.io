@@ -7,8 +7,8 @@
 	],
 	"sourcesContent": [
 		"@import \"main\";",
-		"html {\n\tbackground-color: blue;\n\tfont-size: 18 px;\n}\n\n@media (min-width: 981 px) {\n\thtml {\n\t\tbackground-color: red;\n\t\tfont-size: 22 px;\n\t}\n}\n"
+		"html {\n\tfont-size: 18px;\n\tmax-width: 65rem;\n\tmargin: 0 auto;\n\tpadding: 1rem;\n\tline-height: 1.5;\n}\n\n@media (max-width: 981px) and (orientation: portrait) {\n\thtml {\n\t\tfont-size: 200%;\n\t\tbackground-color: red;\n\t\tpadding: 2rem;\n\t}\n\n\tnav ul li {\n\t\tfont-size: 180%;\n\t\tpadding-bottom: 2rem;\n\t}\n\n\tnav ul h1 {\n\t\tmargin: 0;\n\t}\n}\n\na, a:visited {\n\tcolor: black;\n\ttext-decoration: none;\n}\n\nnav ul {\n\tlist-style: none;\n\tdisplay: inline-block;\n\tmargin: 0;\n\tmargin-bottom: 2.25rem;\n\tpadding: 0;\n}\n\nnav ul li {\n\tdisplay: inline-block;\n\tmargin-right: 1rem;\n}\n\nfooter {\n\tpadding: 2rem 0 0;\n\tmargin-top: 1rem;\n}\n\n.page404 {\n\ttext-align: center;\n}\n\n.page404 h1{\n\tfont-size: 4em;\n}\n"
 	],
 	"names": [],
-	"mappings": "ACAA,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,IAAI,EACtB,SAAS,EAAE,KAAK,GAChB;;AAED,MAAM,EAAE,SAAS,EAAE,GAAG,CAAC,EAAE,IACxB,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,GAAG,EACrB,SAAS,EAAE,KAAK,GAChB"
+	"mappings": "ACAA,AAAA,IAAI,CAAC,EACJ,SAAS,EAAE,IAAI,EACf,SAAS,EAAE,KAAK,EAChB,MAAM,EAAE,MAAM,EACd,OAAO,EAAE,IAAI,EACb,WAAW,EAAE,GAAG,GAChB;;AAED,MAAM,EAAE,SAAS,EAAE,KAAK,OAAO,WAAW,EAAE,QAAQ,IACnD,AAAA,IAAI,CAAC,EACJ,SAAS,EAAE,IAAI,EACf,gBAAgB,EAAE,GAAG,EACrB,OAAO,EAAE,IAAI,GACb;EAED,AAAA,GAAG,CAAC,EAAE,CAAC,EAAE,CAAC,EACT,SAAS,EAAE,IAAI,EACf,cAAc,EAAE,IAAI,GACpB;EAED,AAAA,GAAG,CAAC,EAAE,CAAC,EAAE,CAAC,EACT,MAAM,EAAE,CAAC,GACT;;AAGF,AAAA,CAAC,EAAE,CAAC,AAAA,QAAQ,CAAC,EACZ,KAAK,EAAE,KAAK,EACZ,eAAe,EAAE,IAAI,GACrB;;AAED,AAAA,GAAG,CAAC,EAAE,CAAC,EACN,UAAU,EAAE,IAAI,EAChB,OAAO,EAAE,YAAY,EACrB,MAAM,EAAE,CAAC,EACT,aAAa,EAAE,OAAO,EACtB,OAAO,EAAE,CAAC,GACV;;AAED,AAAA,GAAG,CAAC,EAAE,CAAC,EAAE,CAAC,EACT,OAAO,EAAE,YAAY,EACrB,YAAY,EAAE,IAAI,GAClB;;AAED,AAAA,MAAM,CAAC,EACN,OAAO,EAAE,QAAQ,EACjB,UAAU,EAAE,IAAI,GAChB;;AAED,AAAA,QAAQ,CAAC,EACR,UAAU,EAAE,MAAM,GAClB;;AAED,AAAA,QAAQ,CAAC,EAAE,CAAA,EACV,SAAS,EAAE,GAAG,GACd"
 }
