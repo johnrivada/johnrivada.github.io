@@ -1,4 +1,4 @@
-html { font-size: 18px; max-width: 65rem; margin: 0 auto; padding: 1rem; line-height: 1.5; }
+html { font-size: 18px; max-width: 65rem; margin: 0 auto; padding: 1rem; line-height: 1.5; font-family: Arial, Helvetica, sans-serif; }
 
 @media (max-width: 981px) and (orientation: portrait) { html { padding: 2rem; }
   body { font-size: 150%; }
