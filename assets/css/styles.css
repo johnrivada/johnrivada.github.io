@@ -1,5 +1,5 @@
 html { background-color: red; }
 
-@media (min-width: 500px) { html { background-color: green; } }
+@media (min-width: 400px) { html { background-color: green; } }
 
 /*# sourceMappingURL=styles.css.map */
