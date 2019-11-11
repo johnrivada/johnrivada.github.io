@@ -1,5 +1,13 @@
 html { background-color: red; }
 
-@media (max-width: 980px) { html { background-color: blue; } }
+@media (max-width: 700px) { html { background-color: orange; } }
+
+@media (max-width: 780px) { html { background-color: yellow; } }
+
+@media (max-width: 760px) { html { background-color: green; } }
+
+@media (max-width: 740px) { html { background-color: blue; } }
+
+@media (max-width: 720px) { html { background-color: purple; } }
 
 /*# sourceMappingURL=styles.css.map */

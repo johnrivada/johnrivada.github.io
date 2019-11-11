@@ -7,8 +7,8 @@
 	],
 	"sourcesContent": [
 		"@import \"main\";",
-		"html {\r\n\tbackground-color: red;\r\n}\r\n\r\n@media (max-width:980px) {\r\n\thtml {\r\n\t\tbackground-color: blue;\r\n\t}\r\n}\r\n"
+		"html {\r\n\tbackground-color: red;\r\n}\r\n\r\n@media (max-width:700px) {\r\n\thtml {\r\n\t\tbackground-color: orange;\r\n\t}\r\n}\r\n\r\n@media (max-width:780px) {\r\n\thtml {\r\n\t\tbackground-color: yellow;\r\n\t}\r\n}\r\n\r\n@media (max-width:760px) {\r\n\thtml {\r\n\t\tbackground-color: green;\r\n\t}\r\n}\r\n\r\n@media (max-width:740px) {\r\n\thtml {\r\n\t\tbackground-color: blue;\r\n\t}\r\n}\r\n\r\n@media (max-width:720px) {\r\n\thtml {\r\n\t\tbackground-color: purple;\r\n\t}\r\n}\r\n"
 	],
 	"names": [],
-	"mappings": "ACAA,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,GAAG,GACrB;;AAED,MAAM,EAAE,SAAS,EAAE,KAAK,IACvB,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,IAAI,GACtB"
+	"mappings": "ACAA,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,GAAG,GACrB;;AAED,MAAM,EAAE,SAAS,EAAE,KAAK,IACvB,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,MAAM,GACxB;;AAGF,MAAM,EAAE,SAAS,EAAE,KAAK,IACvB,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,MAAM,GACxB;;AAGF,MAAM,EAAE,SAAS,EAAE,KAAK,IACvB,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,KAAK,GACvB;;AAGF,MAAM,EAAE,SAAS,EAAE,KAAK,IACvB,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,IAAI,GACtB;;AAGF,MAAM,EAAE,SAAS,EAAE,KAAK,IACvB,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,MAAM,GACxB"
 }
