@@ -27,6 +27,8 @@ footer { padding: 2rem 0 0; margin-top: 1rem; }
 
 .blogpost { border-top: 1px solid black; margin-top: 6rem; }
 
+.categories { font-size: 12px; }
+
 .archiveblock { border-top: 1px solid black; border-bottom: 1px solid black; text-align: center; padding: 2rem 0; }
 
 /*# sourceMappingURL=styles.css.map */
