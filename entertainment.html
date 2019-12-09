@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Entertainment</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/js/processing.js"></script>
+    <script src="/assets/js/jquery.js"></script>
+
+  </head>
+  <body>
+    <nav>
+  <ul>
+    <li><h1><a href="/"> John Rivada </a></h1></li>
+    
+      <li><a href="/blog" >Blog</a></li>
+    
+  <ul>
+</nav>
+
+    <div style="text-align:center;"> The worth of my Switch Backlog:
+ <h1 class="switchBacklogValue"> </h1>
+</div>
+
+<div class="switchGamesBacklog">
+  <h3>Switch Games:</h3>
+</div>
+
+<script>
+
+
+
+var switchValue = 0;
+
+var switchGames = [
+    { name: 'Ray-Man Legends Definitive Edition', cost: '20.00', hours: '', completion: ''},
+    { name: 'Mario Kart 8 Deluxe', cost: '90.39', hours: '', completion: '' },
+    { name: 'Pokemon Lets Go: Pikachu', cost: '81.36', hours: '', completion: '' },
+    { name: 'Super Smash Bros. Ultimate', cost: '90.39', hours: '', completion: '' },
+    { name: 'Yu-Gi-Oh: Duel Generations', cost: '63.00', hours: '', completion: '' },
+    { name: 'Untitled Goose Game', cost: '22.02', hours: '', completion: '' },
+    { name: 'Pokemon Sword', cost: '90.39', hours: '', completion: '' },
+    { name: 'Tetris', cost: '12.95', hours: '', completion: '' },
+];
+
+for (var i = 0; i < switchGames.length; ++i) {
+    switchValue  = parseFloat(switchValue) + parseFloat(switchGames[i].cost);
+    $(".switchGamesBacklog").append(switchGames[i].name + "<br>");
+}
+switchValue = switchValue.toFixed(2);
+$(".switchBacklogValue").text("$" + switchValue);
+
+
+</script>
+
+
+    <footer>
+  <p><a href="#">Back to top</a> · © 2019 John Rivada</p>
+</footer>
+
+  </body>
+</html>
