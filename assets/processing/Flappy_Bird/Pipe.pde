@@ -13,7 +13,7 @@ class Pipe {
 
   Pipe(boolean it, float h) {
     hit = false;
-    width = 80;
+    width = 50;
     height = h;
     x = windowWidth + width;
     isTop = it;

@@ -6,6 +6,7 @@ boolean dead = true;
 int windowHeight = 800;
 int windowWidth = 400;
 
+int brainWindowSize = 200;
 Player player;
 PipePair pipe;
 
@@ -13,6 +14,10 @@ ArrayList<PipePair> pipes = new ArrayList<PipePair>();
 int count = 0;
 
 int score = 0;
+
+
+Brain brain = new Brain();
+
 void newGame() {
   player = new Player(100, windowHeight/2);
   pipes.clear();
@@ -52,10 +57,20 @@ void draw() {
   player.draw();
 
   drawArrows();
-  textSize(24);
+
+  getInput();
+  brain.compute();
+  brain.draw();
+
+  textSize(12);
   fill(0);
-  textAlign(CENTER);
+  textAlign(LEFT);
   text(score, windowWidth/2, windowHeight/2-300);
+  //if (pipes.size() > 0) {
+  //  text("X Distance:" + (pipes.get(0).bottomPipe.x-player.x-(player.size/2)), 0, 700);
+  //  text("Y Distance to top: " + (pipes.get(0).topPipe.bottomY-player.y+(player.size/2)), 0, 725);
+  //  text("Y Distance to bottom: " + (pipes.get(0).bottomPipe.topY-player.y-(player.size/2)), 0, 750);
+  //}
   count++;
 }
 
@@ -79,5 +94,13 @@ void drawArrows() {
   if (pipes.size() > 0) {
     line(player.x, player.y, pipes.get(0).bottomPipe.x, pipes.get(0).bottomPipe.topY);
     line(player.x, player.y, pipes.get(0).bottomPipe.x, pipes.get(0).topPipe.bottomY);
+  }
+}
+
+void getInput() {
+  if (pipes.size() > 0) {
+    brain.matrixValues.get(0).set(0, (pipes.get(0).bottomPipe.x-player.x-(player.size/2)));
+    brain.matrixValues.get(0).set(1, (pipes.get(0).topPipe.bottomY-player.y+(player.size/2)));
+    brain.matrixValues.get(0).set(2, (pipes.get(0).bottomPipe.topY-player.y-(player.size/2)));
   }
 }
