@@ -12,9 +12,11 @@ PipePair pipe;
 ArrayList<PipePair> pipes = new ArrayList<PipePair>();
 int count = 0;
 
+int score = 0;
 void newGame() {
   player = new Player(100, windowHeight/2);
   pipes.clear();
+  score = 0;
 }
 
 void setup() {
@@ -43,10 +45,17 @@ void draw() {
 
     if (pipes.get(a).bottomPipe.x < (0-pipes.get(a).bottomPipe.width)) {
       pipes.remove(a);
+      score++;
     }
     pipes.get(a).draw();
   }
   player.draw();
+
+  drawArrows();
+  textSize(24);
+  fill(0);
+  textAlign(CENTER);
+  text(score, windowWidth/2, windowHeight/2-300);
   count++;
 }
 
@@ -66,10 +75,9 @@ void mousePressed() {
   player.flap();
 }
 
-//void touchStarted() {
-//  if (dead) {
-//    dead = false;
-//    newGame();
-//  }
-//  player.flap();
-//}
+void drawArrows() {
+  if (pipes.size() > 0) {
+    line(player.x, player.y, pipes.get(0).bottomPipe.x, pipes.get(0).bottomPipe.topY);
+    line(player.x, player.y, pipes.get(0).bottomPipe.x, pipes.get(0).topPipe.bottomY);
+  }
+}
