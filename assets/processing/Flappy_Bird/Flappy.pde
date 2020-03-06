@@ -66,10 +66,10 @@ void mousePressed() {
   player.flap();
 }
 
-void touchStarted() {
-  if (dead) {
-    dead = false;
-    newGame();
-  }
-  player.flap();
-}
+//void touchStarted() {
+//  if (dead) {
+//    dead = false;
+//    newGame();
+//  }
+//  player.flap();
+//}
