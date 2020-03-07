@@ -36,6 +36,7 @@ int kSelection = -1;
 boolean dead = false;
 int deadFrame = 0; 
 
+int numTries = 0;
 void setup() {
   size(450, 800);
   setupSigmoid();
@@ -82,7 +83,7 @@ void draw() {
     } else {
       strokeWeight(0);
     }
-    
+
     rect(125, 500, 200, 50);
 
     strokeWeight(1);
@@ -124,6 +125,9 @@ void draw() {
     for (int a = 0; a < pipes.size(); a++) {
       if (gameState == 1) {
         if (pipes.get(a).topPipe.collided(player) || pipes.get(a).bottomPipe.collided(player)) {
+          if (score > highestScore) {
+             highestScore = score;
+          }
           dead = true;
         }
       } else if (gameState == 3) {
@@ -173,11 +177,11 @@ void draw() {
 
     //drawArrows();
 
-    textSize(12);
+    textSize(48);
     fill(0);
     textAlign(LEFT);
     text(score, windowWidth/2, windowHeight/2-300);
-
+    textSize(12);
     count++;
 
     if (gameState == 2) {
@@ -202,12 +206,9 @@ void draw() {
     }
     text("highestScore: " + highestScore, 0, 545);
   }
-  if (gameState == 1) {
-    if (dead) {
-      dead = true;
-    }
+  if(gameState == 1) {
+    text("tries: " + numTries, 0, 530);
   }
-
   if (deadFrame > 100) {
     textSize(40);
     textAlign(CENTER);
@@ -228,7 +229,7 @@ void keyPressed() {
       } else {
         kSelection = 0;
       }
-    } else if(keyCode == DOWN) {
+    } else if (keyCode == DOWN) {
       if (kSelection == 1) {
         kSelection = 0;
       } else {
@@ -324,7 +325,9 @@ void newGame() {
   score = 0;
   count = 0;
   dead = false;
-
+  numTries++;
+  
+  
   if (gameState == 1) {
     player = new Player();
   } else if (gameState == 3) {
