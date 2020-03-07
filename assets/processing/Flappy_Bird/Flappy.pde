@@ -161,14 +161,14 @@ void draw() {
         }
       }
 
-      Player player = new Player();
+      Player playerBrain = new Player();
       for (int a = 0; a < playerPopulation.size(); a++) {
         if (playerPopulation.get(a).dead == false) {
-          player = playerPopulation.get(a);
+          playerBrain = playerPopulation.get(a);
           break;
         }
       }
-      player.brain.draw();
+      playerBrain.brain.draw();
     } 
 
     //drawArrows();
