@@ -1,7 +1,7 @@
 class Brain {
-  int ilnNum = 3;
-  int hlNum = 1;
-  int hlnNum = 3;
+  int ilnNum = 4;
+  int hlNum = 2;
+  int hlnNum = 4;
   int olnNum = 1;
 
   int nodeSize = 20;
@@ -9,7 +9,8 @@ class Brain {
   ArrayList<ArrayList<Float>> matrixValues;
   ArrayList<ArrayList<ArrayList<Float>>> matrixWeights;
   ArrayList<ArrayList<Float>> matrixBias;
-
+  
+  int drawOffset = 600;
   Brain() {
 
     matrixValues = new ArrayList<ArrayList<Float>>();
@@ -74,10 +75,10 @@ class Brain {
         } else {
           fill(255);
         }
-        ellipse( (brainWindowSize / (matrixValues.size()+1)) * (layerIndex+1), (brainWindowSize / (matrixValues.get(layerIndex).size()+1)) * (lnIndex+1)+500, nodeSize, nodeSize);
+        ellipse( (brainWindowSize / (matrixValues.size()+1)) * (layerIndex+1), (brainWindowSize / (matrixValues.get(layerIndex).size()+1)) * (lnIndex+1)+drawOffset, nodeSize, nodeSize);
         fill(0);
         str = nf(matrixValues.get(layerIndex).get(lnIndex), 2, 2);
-        text(str, (brainWindowSize / (matrixValues.size()+1)) * (layerIndex+1), (brainWindowSize / (matrixValues.get(layerIndex).size()+1)) * (lnIndex+1)+500);
+        text(str, (brainWindowSize / (matrixValues.size()+1)) * (layerIndex+1), (brainWindowSize / (matrixValues.get(layerIndex).size()+1)) * (lnIndex+1)+drawOffset);
       }
     }
   }
@@ -93,7 +94,7 @@ class Brain {
           } else {
             stroke(color(0, 0, 255));
           }
-          line( (brainWindowSize / (matrixValues.size()+1)) * (layerIndex+1), (brainWindowSize / (matrixValues.get(layerIndex).size()+1)) * (plnIndex+1)+500, (brainWindowSize / (matrixValues.size()+1)) * (layerIndex+1+1), (brainWindowSize / (matrixValues.get(layerIndex+1).size()+1)) * (lnIndex+1)+500);
+          line( (brainWindowSize / (matrixValues.size()+1)) * (layerIndex+1), (brainWindowSize / (matrixValues.get(layerIndex).size()+1)) * (plnIndex+1)+drawOffset, (brainWindowSize / (matrixValues.size()+1)) * (layerIndex+1+1), (brainWindowSize / (matrixValues.get(layerIndex+1).size()+1)) * (lnIndex+1)+drawOffset);
           stroke(0);
         }
       }
