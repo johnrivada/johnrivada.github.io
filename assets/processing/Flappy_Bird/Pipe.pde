@@ -28,8 +28,8 @@ class Pipe {
       bottomY = height;
     }
 
-    img = loadImage("pipe.png");
-    img2 = loadImage("pipe2.png");
+    img = loadImage("assets/images/Flappy_Bird/pipe.png");
+    img2 = loadImage("assets/images/Flappy_Bird/pipe2.png");
   }
 
   void process() {

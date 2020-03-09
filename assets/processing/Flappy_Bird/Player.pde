@@ -22,7 +22,7 @@ class Player {
     size = 50;
 
     brain = new Brain();
-    img = loadImage("flappy.png");
+    img = loadImage("assets/images/Flappy_Bird/flappy.png");
   }
 
   Player(Brain b) {
@@ -33,7 +33,7 @@ class Player {
     size = 50;
 
     brain = b;
-    img = loadImage("flappy.png");
+    img = loadImage("assets/images/Flappy_Bird/flappy.png");
   }
 
   void process() {
