@@ -11,6 +11,8 @@ class Pipe {
   boolean isTop;
   boolean hit;
 
+  PImage img;
+  PImage img2;
   Pipe(boolean it, float h) {
     hit = false;
     width = 50;
@@ -25,6 +27,9 @@ class Pipe {
       topY = windowHeight - height;
       bottomY = height;
     }
+
+    img = loadImage("pipe.png");
+    img2 = loadImage("pipe2.png");
   }
 
   void process() {
@@ -38,6 +43,11 @@ class Pipe {
       fill(0, 204, 0);
     }
     rect(x, topY, width, height);
+    if (isTop) {
+      image(img2, x-3, topY, 56, height);
+    } else {
+      image(img, x-3, topY, 56, height);
+    }
   }
 
   boolean collided(Player p) {

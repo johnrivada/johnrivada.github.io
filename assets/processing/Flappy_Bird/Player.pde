@@ -13,6 +13,7 @@ class Player {
 
   Brain brain;
 
+  PImage img;
   Player() {
     x = 100;
     y = windowHeight/2;
@@ -21,6 +22,7 @@ class Player {
     size = 50;
 
     brain = new Brain();
+    img = loadImage("flappy.png");
   }
 
   Player(Brain b) {
@@ -31,6 +33,7 @@ class Player {
     size = 50;
 
     brain = b;
+    img = loadImage("flappy.png");
   }
 
   void process() {
@@ -66,13 +69,25 @@ class Player {
 
     accY = 0;
   }
-
   void draw() {
     fill(255, 255, 0);
     ellipse(x, y, size, size);
+
+    //First Square
+    pushMatrix();
+    fill(0);
+    translate(x, y);
+    if(velY > 0) {
+      rotate(0.6);
+    } else {
+      rotate(-0.6);
+    }
+    image(img, -50, -50);
+    popMatrix();
+    
   }
 
-  
+
   void flap() {
     accY -= 20;
   }

@@ -6,6 +6,8 @@ class PipePair {
   Pipe bottomPipe;
   Pipe topPipe; 
 
+  Bonus bonus;
+
   PipePair() {
     gap = 200;
     topHeight = random(20, windowHeight-100-gap);
@@ -24,7 +26,6 @@ class PipePair {
   void draw() {
     topPipe.draw();
     bottomPipe.draw();
-    
   }
 
   boolean isOffScreen() {

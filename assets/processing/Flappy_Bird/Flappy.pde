@@ -17,12 +17,15 @@ int highestScore = 0;
 
 ArrayList<Player> playerPopulation = new ArrayList<Player>();
 ArrayList<Player> nextGeneration;
-int playerNum = 100;
+int mPlayerNum = 50;
+int sPlayerNum = 10;
+int playerNum = mPlayerNum;
 int playerIndex = 0;
 int playerGenIndex = 0;
+float topPercent = 0.2;
 
 
-float mutationRate = 0.25;
+float mutationRate = 0.05;
 int numDead = 0;
 
 int gameState = 0;
@@ -126,7 +129,7 @@ void draw() {
       if (gameState == 1) {
         if (pipes.get(a).topPipe.collided(player) || pipes.get(a).bottomPipe.collided(player)) {
           if (score > highestScore) {
-             highestScore = score;
+            highestScore = score;
           }
           dead = true;
         }
@@ -141,6 +144,12 @@ void draw() {
             if (pipes.get(a).topPipe.collided(playerPopulation.get(b)) || pipes.get(a).bottomPipe.collided(playerPopulation.get(b))) {
               playerPopulation.get(b).dead = true;
               playerPopulation.get(b).score = score;
+            }
+
+            for (int c = 0; c < playerPopulation.size(); c++) {
+              if (playerPopulation.get(c).score > highestScore) {
+                highestScore = playerPopulation.get(c).score;
+              }
             }
           }
         }
@@ -206,7 +215,7 @@ void draw() {
     }
     text("highestScore: " + highestScore, 0, 545);
   }
-  if(gameState == 1) {
+  if (gameState == 1) {
     text("tries: " + numTries, 0, 530);
   }
   if (deadFrame > 100) {
@@ -220,7 +229,7 @@ void draw() {
 void keyPressed() {
   if (gameState == 0) {
     if (key == 'a') {
-      playerNum = 10;
+      playerNum = sPlayerNum;
       gameState = 3;
       newGame();
     } else if (keyCode == UP) {
@@ -248,7 +257,7 @@ void keyPressed() {
 
   if (key == 'b') {
     gameState = 0;
-    playerNum = 100;
+    playerNum = mPlayerNum;
   }
 
 
@@ -291,10 +300,6 @@ void mouseReleased() {
   }
 }
 void drawArrows() {
-  //if (pipes.size() > 0) {
-  //  line(player.x, player.y, pipes.get(0).bottomPipe.x, pipes.get(0).bottomPipe.topY);
-  //  line(player.x, player.y, pipes.get(0).bottomPipe.x, pipes.get(0).topPipe.bottomY);
-  //}
   for (int b = 0; b < playerPopulation.size(); b++) {
     if (pipes.size() > 0) {
       if (playerPopulation.get(b).dead == false) {
@@ -307,9 +312,6 @@ void drawArrows() {
 
 void getInput() {
   if (pipes.size() > 0) {
-    //player.brain.matrixValues.get(0).set(0, (pipes.get(0).bottomPipe.x-player.x-(player.size/2)));
-    //player.brain.matrixValues.get(0).set(1, (pipes.get(0).topPipe.bottomY-player.y+(player.size/2)));
-    //player.brain.matrixValues.get(0).set(2, (pipes.get(0).bottomPipe.topY-player.y-(player.size/2)));
     for (int b = 0; b < playerPopulation.size(); b++) {
       if (playerPopulation.get(b).dead == false) {
         playerPopulation.get(b).brain.matrixValues.get(0).set(0, (pipes.get(0).bottomPipe.x-playerPopulation.get(b).x-(playerPopulation.get(b).size/2)));
@@ -326,8 +328,8 @@ void newGame() {
   count = 0;
   dead = false;
   numTries++;
-  
-  
+
+
   if (gameState == 1) {
     player = new Player();
   } else if (gameState == 3) {
@@ -341,11 +343,6 @@ void newGame() {
   } else if (gameState == 2) {
     playerGenIndex++;
     createGeneration();
-    for (int a = 0; a < playerPopulation.size(); a++) {
-      if (playerPopulation.get(a).score > highestScore) {
-        highestScore = playerPopulation.get(a).score;
-      }
-    }
   }
 
   pipes.clear();
@@ -361,7 +358,7 @@ void setupGeneration() {
 
 void createGeneration() {
   nextGeneration = new ArrayList<Player>();
-  for (int nsgIndex = 0; nsgIndex < playerNum * 0.1; nsgIndex++) {
+  for (int nsgIndex = 0; nsgIndex < playerNum * topPercent; nsgIndex++) {
     int ssHighest = 0;
     int ssIndex = 0;
     for (int spIndex = 0; spIndex < playerPopulation.size(); spIndex++) {
