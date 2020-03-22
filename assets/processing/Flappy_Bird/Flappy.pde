@@ -70,9 +70,9 @@ void draw() {
     }
 
     if (kSelection == 0) {
-      strokeWeight(3);
+      //strokeWeight(3);
     } else {
-      strokeWeight(0);
+      //strokeWeight(0);
     }
     rect(125, 300, 200, 50);
 
@@ -231,7 +231,7 @@ void keyPressed() {
   if (gameState == 0) {
     if (key == 'a') {
       playerNum = sPlayerNum;
-      gameState = 3;
+      gameState = 2;
       newGame();
     } else if (keyCode == UP) {
       if (kSelection == 0) {
@@ -256,15 +256,14 @@ void keyPressed() {
     }
   }
 
-  if (key == 'b') {
-    gameState = 0;
-    playerNum = mPlayerNum;
-  }
-
+  
 
 
   if (!dead) {
-    if (gameState == 1) {
+    if (gameState == 0) {
+      gameState = 1;
+      newGame();
+    } else if (gameState == 1) {
       player.flap();
     }
   } else if (deadFrame > 100) {
@@ -272,6 +271,12 @@ void keyPressed() {
     dead = false;
     newGame();
   }
+  
+  if (key == 'b') {
+    gameState = 0;
+    playerNum = mPlayerNum;
+  }
+
 }
 
 void mousePressed() {
