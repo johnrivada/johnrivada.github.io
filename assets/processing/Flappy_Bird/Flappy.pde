@@ -34,7 +34,7 @@ int playerContoller = 0;
 boolean topSelected = false;
 boolean bottomSelected = false;
 
-int kSelection = -1;
+int kSelection = 0;
 
 boolean dead = false;
 int deadFrame = 0; 
@@ -53,7 +53,7 @@ void draw() {
       if (mouseY > 300 && mouseY < 350) {
         topSelected = true;
       } else if (mouseY > 500 && mouseY < 550) {
-        bottomSelected = true;
+        //bottomSelected = true;
       } else {
         topSelected = false;
         bottomSelected = false;
@@ -95,6 +95,7 @@ void draw() {
     textSize(24);
     textAlign(CENTER);
     text("Player Controlled", 225, 335);
+    fill(150);
     text("AI  Controlled", 225, 535);
   } else {
     if (count % 100 == 0) {
@@ -234,22 +235,22 @@ void keyPressed() {
       newGame();
     } else if (keyCode == UP) {
       if (kSelection == 0) {
-        kSelection = 1;
+        //kSelection = 1;
       } else {
-        kSelection = 0;
+        //kSelection = 0;
       }
     } else if (keyCode == DOWN) {
       if (kSelection == 1) {
-        kSelection = 0;
+        //kSelection = 0;
       } else {
-        kSelection = 1;
+        //kSelection = 1;
       }
     } else if (keyCode == ENTER) {
       if (kSelection == 0) {
         gameState = 1;
         newGame();
       } else {
-        gameState = 2;
+        //gameState = 2;
         newGame();
       }
     }
@@ -293,8 +294,8 @@ void mouseReleased() {
         gameState = 1;
         newGame();
       } else if (mouseY > 500 && mouseY < 550) {
-        gameState = 2;
-        newGame();
+        //gameState = 2;
+        //newGame();
       }
     }
   }
