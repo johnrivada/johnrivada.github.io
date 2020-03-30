@@ -230,7 +230,7 @@ void draw() {
 void keyPressed() {
   if (gameState == 0) {
     if (key == 'a') {
-      playerNum = sPlayerNum;
+      playerNum = mPlayerNum;
       gameState = 2;
       newGame();
     } else if (keyCode == UP) {
