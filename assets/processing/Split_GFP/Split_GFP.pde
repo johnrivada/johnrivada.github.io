@@ -209,7 +209,7 @@ void mousePressed() {
         if (a < 6) {
           for (int b = 0; b < 6; b++) {
             if (a != 5) {
-              buttonArray.get(b).clicked = false;
+              buttonArray.get(b).isClicked = false;
             }
           }
           if (a != 5) {
@@ -218,7 +218,7 @@ void mousePressed() {
           }
         } else {
           for (int b = 6; b < 12; b++) {
-            buttonArray.get(b).clicked = false;
+            buttonArray.get(b).isClicked = false;
           }
           buttonArray.get(a).clicked();
           p2 = a;
