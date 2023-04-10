@@ -25,6 +25,14 @@ int p2 = -1;
 
 boolean switchHover= false;
 
+float[] randomInteractions = {
+  random(10),
+  random(10),
+  random(10),
+  random(10),
+  random(10),
+  random(10)
+};
 void setup() {
   size(540, 960);
 
@@ -60,7 +68,8 @@ void setup() {
     }
   }
 }
-
+float less = 1;
+float more = 1;
 void draw() {
   if (lightsOn) {
     background(255);
@@ -80,7 +89,7 @@ void draw() {
     fill(0);
     stroke(255);
   }
-  ellipse(270, 270, 500,500);
+  ellipse(270, 270, 500, 500);
 
   for (int a = 0; a < proteinArray.size(); a++) {
     for (int b = 0; b < proteinArray.size(); b++) {
@@ -127,9 +136,9 @@ void draw() {
   noFill();
   for (int a = 0; a < 6; a++) {
     if (a != 5) {
-      ellipse(210, 575 + (a*60), 40,40);
+      ellipse(210, 575 + (a*60), 40, 40);
     }
-    ellipse(480, 575 + (a*60), 40,40);
+    ellipse(480, 575 + (a*60), 40, 40);
   }
 
   textSize(30);
@@ -146,8 +155,8 @@ void draw() {
   rect(210-10, 575+120-10, 20, 20);
   rect(480-10, 575+120-10, 20, 20);
 
-  ellipse(210, 575+180, 10,10);
-  ellipse(480, 575+180, 10,10);
+  ellipse(210, 575+180, 10, 10);
+  ellipse(480, 575+180, 10, 10);
 
   pushMatrix();
   star(210, 575+240, 10, 16, 5);
@@ -200,7 +209,7 @@ void mousePressed() {
         if (a < 6) {
           for (int b = 0; b < 6; b++) {
             if (a != 5) {
-              buttonArray.get(b).isClicked = false;
+              buttonArray.get(b).clicked = false;
             }
           }
           if (a != 5) {
@@ -209,7 +218,7 @@ void mousePressed() {
           }
         } else {
           for (int b = 6; b < 12; b++) {
-            buttonArray.get(b).isClicked = false;
+            buttonArray.get(b).clicked = false;
           }
           buttonArray.get(a).clicked();
           p2 = a;
@@ -217,12 +226,12 @@ void mousePressed() {
       }
     }
   }
-  
+
   if (mouseX  > 40 && mouseX < 230) {
     if (mouseY  > 850 && mouseY < 900) {
       lightsOn = !lightsOn;
-    } 
-  } 
+    }
+  }
 }
 
 
@@ -242,8 +251,6 @@ void fluoresce() {
   for (int a = 0; a < proteinArray.size(); a++) {
     proteinArray.get(a).fluorescing = false;
   }
-
-
   if (p1 == 0) {
     if (p2 == 6 || p2 == 7 || p2 == 8 || p2 == 9 || p2 == 10 || p2 == 11) {
       for (int a = 0; a < proteinArray.size(); a++) {
@@ -252,8 +259,15 @@ void fluoresce() {
             if (proteinArray.get(b).type == (p2-5)) {
               if ( a != b) {
                 if (circlesOverlap(proteinArray.get(a).location.x, proteinArray.get(a).location.y, (proteinArray.get(a).size/2)+3, proteinArray.get(b).location.x, proteinArray.get(b).location.y, (proteinArray.get(b).size/2)+3)) {
-                  proteinArray.get(a).fluorescing = true;
-                  proteinArray.get(b).fluorescing = true;
+                  if (p2 == 11) {
+                    if (randomInteractions[p1] > 5) {
+                      proteinArray.get(a).fluorescing = true;
+                      proteinArray.get(b).fluorescing = true;
+                    }
+                  } else {
+                    proteinArray.get(a).fluorescing = true;
+                    proteinArray.get(b).fluorescing = true;
+                  }
                 }
               }
             }
@@ -272,8 +286,15 @@ void fluoresce() {
             if (proteinArray.get(b).type == (p2-5)) {
               if ( a != b) {
                 if (circlesOverlap(proteinArray.get(a).location.x, proteinArray.get(a).location.y, (proteinArray.get(a).size/2)+3, proteinArray.get(b).location.x, proteinArray.get(b).location.y, (proteinArray.get(b).size/2)+3)) {
-                  proteinArray.get(a).fluorescing = true;
-                  proteinArray.get(b).fluorescing = true;
+                  if (p2 == 11) {
+                    if (randomInteractions[p1] > 5) {
+                      proteinArray.get(a).fluorescing = true;
+                      proteinArray.get(b).fluorescing = true;
+                    }
+                  } else {
+                    proteinArray.get(a).fluorescing = true;
+                    proteinArray.get(b).fluorescing = true;
+                  }
                 }
               }
             }
@@ -292,8 +313,15 @@ void fluoresce() {
             if (proteinArray.get(b).type == (p2-5)) {
               if ( a != b) {
                 if (circlesOverlap(proteinArray.get(a).location.x, proteinArray.get(a).location.y, (proteinArray.get(a).size/2)+3, proteinArray.get(b).location.x, proteinArray.get(b).location.y, (proteinArray.get(b).size/2)+3)) {
-                  proteinArray.get(a).fluorescing = true;
-                  proteinArray.get(b).fluorescing = true;
+                  if (p2 == 11) {
+                    if (randomInteractions[p1] > 5) {
+                      proteinArray.get(a).fluorescing = true;
+                      proteinArray.get(b).fluorescing = true;
+                    }
+                  } else {
+                    proteinArray.get(a).fluorescing = true;
+                    proteinArray.get(b).fluorescing = true;
+                  }
                 }
               }
             }
@@ -312,8 +340,15 @@ void fluoresce() {
             if (proteinArray.get(b).type == (p2-5)) {
               if ( a != b) {
                 if (circlesOverlap(proteinArray.get(a).location.x, proteinArray.get(a).location.y, (proteinArray.get(a).size/2)+3, proteinArray.get(b).location.x, proteinArray.get(b).location.y, (proteinArray.get(b).size/2)+3)) {
-                  proteinArray.get(a).fluorescing = true;
-                  proteinArray.get(b).fluorescing = true;
+                  if (p2 == 11) {
+                    if (randomInteractions[p1] > 5) {
+                      proteinArray.get(a).fluorescing = true;
+                      proteinArray.get(b).fluorescing = true;
+                    }
+                  } else {
+                    proteinArray.get(a).fluorescing = true;
+                    proteinArray.get(b).fluorescing = true;
+                  }
                 }
               }
             }
@@ -333,8 +368,15 @@ void fluoresce() {
             if (proteinArray.get(b).type == (p2-5)) {
               if ( a != b) {
                 if (circlesOverlap(proteinArray.get(a).location.x, proteinArray.get(a).location.y, (proteinArray.get(a).size/2)+3, proteinArray.get(b).location.x, proteinArray.get(b).location.y, (proteinArray.get(b).size/2)+3)) {
-                  proteinArray.get(a).fluorescing = true;
-                  proteinArray.get(b).fluorescing = true;
+                  if (p2 == 11) {
+                    if (randomInteractions[p1] > 5) {
+                      proteinArray.get(a).fluorescing = true;
+                      proteinArray.get(b).fluorescing = true;
+                    }
+                  } else {
+                    proteinArray.get(a).fluorescing = true;
+                    proteinArray.get(b).fluorescing = true;
+                  }
                 }
               }
             }
@@ -355,8 +397,15 @@ void fluoresce() {
             if (proteinArray.get(b).type == (p2-5)) {
               if ( a != b) {
                 if (circlesOverlap(proteinArray.get(a).location.x, proteinArray.get(a).location.y, (proteinArray.get(a).size/2)+3, proteinArray.get(b).location.x, proteinArray.get(b).location.y, (proteinArray.get(b).size/2)+3)) {
-                  proteinArray.get(a).fluorescing = true;
-                  proteinArray.get(b).fluorescing = true;
+                  if (p2 == 11) {
+                    if (randomInteractions[p1] > 5) {
+                      proteinArray.get(a).fluorescing = true;
+                      proteinArray.get(b).fluorescing = true;
+                    }
+                  } else {
+                    proteinArray.get(a).fluorescing = true;
+                    proteinArray.get(b).fluorescing = true;
+                  }
                 }
               }
             }
